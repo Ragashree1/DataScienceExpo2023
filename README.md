@@ -13,9 +13,9 @@ This is a web-based Recipe Recommendation System built using Flask, Natural Lang
 - Front-end is built with HTML forms, and Flask handles the backend logic.
 
 # The app
-<img width="729" alt="image" src="https://github.com/Ragashree1/DataScienceExpo2023/assets/122210451/35cef02e-c649-48a9-b1af-b6a1c47bf374">
-<img width="799" alt="image" src="https://github.com/Ragashree1/DataScienceExpo2023/assets/122210451/cbb6d08b-2ec0-4f53-9aab-ddff174d67f0">
-<img width="925" alt="image" src="https://github.com/Ragashree1/DataScienceExpo2023/assets/122210451/4e8f12ee-a23e-4204-a34b-1dcf638490c7">
+<img width="735" alt="image" src="https://github.com/Ragashree1/DataScienceExpo2023/assets/122210451/e6c5443c-25d6-4a3f-94f9-6322c15e875e">
+<img width="764" alt="image" src="https://github.com/Ragashree1/DataScienceExpo2023/assets/122210451/e90022d6-bc39-43d1-9d3d-fc19cee9c2c8">
+<img width="723" alt="image" src="https://github.com/Ragashree1/DataScienceExpo2023/assets/122210451/ce7b3aab-bca0-4012-99c4-7e797ead36e7">
 
 ## Prerequisites
 
