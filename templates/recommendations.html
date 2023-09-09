@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Recipes</title>
+    <style>
+        /* Basic styling for improved appearance */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px auto;
+            margin-top: 70px;
+            max-width: 400px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+
+        a.button {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 15%; /* Make it circular */
+            width: 75px; /* Set the width and height for the circle */
+            height: 35px;
+            line-height: 20px; /* Center the text vertically */
+        }
+
+        a.normal {
+            text-decoration: none; /* Remove underline */
+            color: #333;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <form id="recipeForm" method="POST" action="/recipe">
+        <h1>Recommended Recipes for "{{ recipe_title }}"</h1>
+        <ul>
+            {% for recommendation in recommendations %}
+            <li ><a class="normal recommendation-link"  data-title="{{ recommendation }}" >{{ loop.index }}. {{ recommendation }}</a></li>
+            {% endfor %}
+        </ul>
+
+     <!-- Add a hidden form for sending POST requests -->
+        <input type="hidden" name="title" id="recipeTitleInput">
+    
+        <a class='button' href="/">Back to Home</a>
+    </form>
+    <!-- Include JavaScript to handle the click event -->
+    <script>
+        // Function to handle the click event on recommendation links
+        document.querySelectorAll('.recommendation-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default click behavior (i.e., following the link)
+                
+                // Get the title from the data-title attribute
+                const title = this.getAttribute('data-title');
+                
+                // Set the title in the hidden input field
+                document.getElementById('recipeTitleInput').value = title;
+                
+                // Submit the form to send a POST request
+                document.getElementById('recipeForm').submit();
+            });
+        });
+        </script>
+    
+</body>
+</html>
